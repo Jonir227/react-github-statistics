@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react';
+import { withRouter, Route } from 'react-router-dom';
 import { SearchContainer } from './pages';
 import { Header } from './components';
 
@@ -7,10 +8,10 @@ class App extends Component {
     return (
       <Fragment>
         <Header/>
-        <SearchContainer />
+        <Route path="/" component={SearchContainer} />
       </Fragment>
     );
   }
 }
 
-export default App;
+export default withRouter(App);
