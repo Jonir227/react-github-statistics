@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Title = styled.h2`
@@ -10,9 +11,11 @@ const Title = styled.h2`
 class Header extends Component {
   render() {
     return (
-      <Title>
-        Github Statistics
-      </Title>
+      <Link to="/">
+        <Title>
+          Github Statistics
+        </Title>
+      </Link>
     );
   }
 }

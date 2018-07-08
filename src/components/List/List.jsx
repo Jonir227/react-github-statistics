@@ -1,16 +1,22 @@
 import React, { Fragment } from 'react';
+import styled from 'styled-components';
+import ListItem from './ListItem';
+
+const Results = styled.ul`
+  list-style-type: none;
+  width: 90%;
+  margin-left: 3%;
+`;
 
 const List = ({ users }) => {
   return (
-    <Fragment>
+    <Results>
       {
         users.map(user => (
-          <div key={user.id}>
-            {user.login}
-          </div>
+          <ListItem key={user.id} {...user} />
         ))
       }
-    </Fragment>
+    </Results>
   );
 };
 

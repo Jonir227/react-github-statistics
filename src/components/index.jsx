@@ -1,9 +1,12 @@
+
+import BackBar from './BackBar';
+import Header from './Header';
 import InputForm from './InputForm';
 import List from './List';
-import Header from './Header';
 
 export {
+  BackBar,
+  Header,
   InputForm,
   List,
-  Header,
 };

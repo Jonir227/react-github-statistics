@@ -1,15 +1,20 @@
 import { injectGlobal } from 'styled-components';
 
 injectGlobal`
-  @import url('https://fonts.googleapis.com/css?family=Nanum+Gothic');
+  @font-face {
+    font-family: 'Nanum Gothic', Prata;
+    src: url('https://fonts.googleapis.com/css?family=Nanum+Gothic|Prata&subset=korean');
+  }
 
-  html,
   body {
-    height: 100%;
-    width: 100%;
+    font-family: 'Nanum Gothic';
+    color: #ffffff;
     background: #2C2F33;
-  },
-  input{
-    background: inherit;
-  },
+  }
+  h1, h2, h3 {
+    font-family: Prata;
+  }
+  a {
+    text-decoration: none;
+  }
 `;

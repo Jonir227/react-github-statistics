@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { withRouter, Route } from 'react-router-dom';
-import { SearchContainer } from './pages';
+import { MainContainer, SearchContainer } from './pages';
 import { Header } from './components';
 
 class App extends Component {
@@ -8,7 +8,8 @@ class App extends Component {
     return (
       <Fragment>
         <Header/>
-        <Route path="/" component={SearchContainer} />
+        <Route exact path="/" component={MainContainer} />
+        <Route exact path="/search" component={SearchContainer} />
       </Fragment>
     );
   }
