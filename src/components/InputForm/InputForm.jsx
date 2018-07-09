@@ -2,7 +2,6 @@ import React, { PureComponent } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import * as Rx from 'rxjs';
 import { map, filter } from 'rxjs/operators';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const FormHeadWrapper = styled.div`
@@ -46,7 +45,6 @@ class InputForm extends PureComponent {
     this.text$ = new Rx.Subject();
     this.enter$ = new Rx.fromEvent(document, 'keydown');
   }
-
   componentDidMount() {
     // text modification code
     this.text$
@@ -66,6 +64,11 @@ class InputForm extends PureComponent {
       )
       .subscribe(() => this.setState({ pressEnter: true }));
   }
+
+  componentWillUnmount() {
+    this.text$.unsubscribe();
+  }
+  
 
   onTextChange = event => {
     this.text$.next(event);

@@ -1,5 +1,8 @@
-const githubUserAPI = 'https://api.github.com/search/users';
+const github = 'https://api.github.com';
+const githubUserSearchAPI = `${github}/search/users`
+const githubUserInfoAPI = `${github}/users`;
 
 export {
-  githubUserAPI,
+  githubUserSearchAPI,
+  githubUserInfoAPI,
 };

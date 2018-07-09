@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const ItemWrapper = styled.li`
@@ -26,17 +27,19 @@ const Username = styled.div`
 
 const ListItem = ({ login, avatar_url, type }) => {
   return (
-    <ItemWrapper>
-      <ProfilePic src={avatar_url} alt="profile" />
-      <div>
-        <Username>
-          {login}
-        </Username>
+    <Link to={`/info/${login}`}>
+      <ItemWrapper>
+        <ProfilePic src={avatar_url} alt="profile" />
         <div>
-          {type}
+          <Username>
+            {login}
+          </Username>
+          <div>
+            {type}
+          </div>
         </div>
-      </div>
-    </ItemWrapper>
+      </ItemWrapper>
+    </Link>
   );
 };
 

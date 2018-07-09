@@ -5,7 +5,6 @@ injectGlobal`
     font-family: 'Nanum Gothic', Prata;
     src: url('https://fonts.googleapis.com/css?family=Nanum+Gothic|Prata&subset=korean');
   }
-
   body {
     font-family: 'Nanum Gothic';
     color: #ffffff;
@@ -15,6 +14,7 @@ injectGlobal`
     font-family: Prata;
   }
   a {
+    color: inherit;
     text-decoration: none;
   }
 `;

@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react';
 import queryString from 'query-string';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { List, BackBar } from '../components';
+import { List, BackBar, Pagenation } from '../components';
 import { user } from '../store/actions';
 
 class SearchContainer extends Component {
@@ -20,26 +20,29 @@ class SearchContainer extends Component {
   }
   render() {
     const {
-      handleFetchUser,
       qs,
     } = this;
 
     const {
-      searchCondition,
       users,
       pending,
     } = this.props;
 
     return (
       <Fragment>
-        <BackBar>
+        <BackBar history={this.props.history}>
           <div>
             Search Result of {qs.query.q}
           </div>
         </BackBar>
         {
-          searchCondition && 
-              (pending ? <div>로딩중입니다!!! 기다려주세요</div> : <List users={users} />)
+          pending ?
+            <div>로딩중입니다!!! 기다려주세요</div>
+          :
+            <Fragment>
+              <List users={users} />
+              <Pagenation />
+            </Fragment>
         }
       </Fragment>
     );
@@ -48,7 +51,6 @@ class SearchContainer extends Component {
 
 const mapStateToProps = state => ({
   users: state.user.user,
-  searchCondition: state.user.searchCondition,
   pending: state.user.pending,
 });
 

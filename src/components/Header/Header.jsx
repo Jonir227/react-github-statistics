@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -8,7 +8,7 @@ const Title = styled.h2`
   text-align: center;
 `;
 
-class Header extends Component {
+class Header extends PureComponent {
   render() {
     return (
       <Link to="/">

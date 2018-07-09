@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import ListItem from './ListItem';
 
@@ -6,6 +6,7 @@ const Results = styled.ul`
   list-style-type: none;
   width: 90%;
   margin-left: 3%;
+  overflow: hidden;
 `;
 
 const List = ({ users }) => {

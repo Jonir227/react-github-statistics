@@ -25,7 +25,7 @@ const RightElement = styled.div`
 
 class BackBar extends PureComponent {
   onButtonClick = () => {
-    window.history.back();
+    this.props.history.goBack();
   }
   render() {
     const {

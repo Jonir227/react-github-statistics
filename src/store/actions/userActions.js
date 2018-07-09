@@ -1,7 +1,7 @@
 import axios from 'axios';
 import * as Rx from 'rxjs';
 import { map } from 'rxjs/operators';
-import { githubUserAPI } from '../../api';
+import { githubUserSearchAPI } from '../../api';
 
 // action type
 export const FETCH_USER = 'FETCH_USER';
@@ -13,7 +13,7 @@ const fetchUser = query => dispatch => {
   dispatch({
     type: FETCH_USER
   });
-  Rx.from(axios(`${githubUserAPI}?q=${query}`))
+  Rx.from(axios(`${githubUserSearchAPI}?q=${query}`))
     .pipe(
       map(result => result.data.items),
     )
